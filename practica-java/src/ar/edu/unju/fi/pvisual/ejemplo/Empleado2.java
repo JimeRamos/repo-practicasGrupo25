@@ -3,78 +3,87 @@ package ar.edu.unju.fi.pvisual.ejemplo;
 import java.time.LocalDate;
 
 public class Empleado2 {
-	private String Nombre;
-	LocalDate Fecha_ingreso;
-	private int Legajo;
-	private String Email;
-	private float Sueldo;
-	private float Horas_trabajadas;
+	private String nombre;
+	LocalDate fecha_ingreso;
+	private int legajo;
+	private String email;
+	private float sueldo;
+	private float horas_trabajadas;
 	
 	public Empleado2() {
 		super();
 	}
+     
+	
+	//constructor de punto_14
+	public Empleado2(String nombre, int legajo, float horas_trabajadas) {
+		super();
+		this.nombre = nombre;
+		this.legajo = legajo;
+		this.horas_trabajadas = horas_trabajadas;
+	}
 
-	
-	
+
+
 	public Empleado2(String nombre, LocalDate fecha_ingreso, int legajo, String email, float sueldo,
 			float horas_trabajadas) {
 		super();
-		Nombre = nombre;
-		Fecha_ingreso = fecha_ingreso;
-		Legajo = legajo;
-		Email = email;
-		Sueldo = sueldo;
-		Horas_trabajadas = horas_trabajadas;
+		this.nombre = nombre;
+		this.fecha_ingreso = fecha_ingreso;
+		this.legajo = legajo;
+		this.email = email;
+		this.sueldo = sueldo;
+		this.horas_trabajadas = horas_trabajadas;
 	}
 
 
 
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
 
 	public LocalDate getFecha_ingreso() {
-		return Fecha_ingreso;
+		return fecha_ingreso;
 	}
 
 	public void setFecha_ingreso(LocalDate fecha_ingreso) {
-		Fecha_ingreso = fecha_ingreso;
+		this.fecha_ingreso = fecha_ingreso;
 	}
 
 	public int getLegajo() {
-		return Legajo;
+		return legajo;
 	}
 
 	public void setLegajo(int legajo) {
-		Legajo = legajo;
+		this.legajo = legajo;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 
 	public float getSueldo() {
-		return sueldo(Sueldo);
+		return sueldo(sueldo);
 	}
 
 	public void setSueldo(float sueldo) {
-		Sueldo = sueldo;
+		this.sueldo = sueldo;
 	}
 
 	public float getHoras_trabajadas() {
-		return Horas_trabajadas;
+		return horas_trabajadas;
 	}
 
 	public void setHoras_trabajadas(float horas_trabajadas) {
-		Horas_trabajadas = horas_trabajadas;
+		this.horas_trabajadas = horas_trabajadas;
 	}
 	
 	public float sueldo(float Horas_trabajadas) {
@@ -98,8 +107,13 @@ public class Empleado2 {
 
 	@Override
 	public String toString() {
-		return "Nombre= "+Nombre +"\n"+ "Fecha_ingreso= "+Fecha_ingreso + "\n"+ "Legajo= "+Legajo +"\n"+ "Email= "
-				+Email +"\n"+ "Sueldo= $ "+ Sueldo +"\n"+ "Horas_trabajadas= "+Horas_trabajadas;
+		if (legajo == 0)
+		    {  legajo = -9999; }
+		if (fecha_ingreso == null )
+		   { fecha_ingreso = LocalDate.of(1900, 01, 01);}
+		 
+		return "Nombre= "+nombre +"\n"+ "Fecha_ingreso= "+fecha_ingreso + "\n"+ "Legajo= "+legajo +"\n"+ "Email= "
+				+email +"\n"+ "Sueldo= $ "+ sueldo +"\n"+ "Horas_trabajadas= "+horas_trabajadas+"\n";
 	}
 
 
@@ -114,5 +128,6 @@ public class Empleado2 {
 		Empleado2 emp = new Empleado2("juan", i, 4231, "juan20@gmail.com", sd, ht);
 	
 		System.out.println(emp.toString());
+		
 	}
 }
