@@ -12,11 +12,8 @@ public class Principal02 {
 		int[] numeros = {0,1,2,3,4,5,6,7,8,9,10};
 		int i=2;
 		
-		String cad,cad1,cad2,cad3;
-		cad = "nO";
-		cad1 = "No";
-		cad2 = "no";
-		cad3 = "NO";	
+		String cad;
+		cad = "No";	
 		
 		while (i==2) {
 			System.out.print(" \n Ingrese un Número Entero del 1 - 9: ");
@@ -38,21 +35,8 @@ public class Principal02 {
 					i= i-1;
 				}
 				else {
-					if(cad1.equals(res) == true) {
-						System.out.print("\n El programa finalizoen el segundo if ");
-						i= i-1;
-					}
-					else {
-						if(cad2.equals(res) == true) {
-							System.out.print("\n El programa finalizoen el tercer if ");
-						i= i-1;
-						}
-						else {
-							if(cad3.equals(res) == true) {
-								System.out.print("\n El programa finalizoen el cuarto if ");
-							i= i-1;
-							}
-						}
+					if(("no".equals(res))|| "NO".equals(res)||"nO".equals(res)) {
+						i=-1;
 					}
 				}
 
